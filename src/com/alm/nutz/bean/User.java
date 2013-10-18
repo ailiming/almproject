@@ -1,5 +1,6 @@
 package com.alm.nutz.bean;
 
+import org.nutz.dao.entity.annotation.Column;
 import org.nutz.dao.entity.annotation.Id;
 import org.nutz.dao.entity.annotation.Table;
 
@@ -12,16 +13,19 @@ public class User {
 	/**
 	 * 姓名
 	 */
+	@Column
 	private String name;
 	
 	/**
 	 * 用户名
 	 */
+	@Column
 	private String username;
 	
 	/**
 	 * 密码
 	 */
+	@Column
 	private String password;
 
 	/**   

@@ -1,4 +1,4 @@
-package com.alm.nutz.module;
+package com.alm.nutz.controller;
 
 import java.util.Date;
 

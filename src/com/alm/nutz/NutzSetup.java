@@ -1,5 +1,7 @@
 package com.alm.nutz;
 
+import java.util.List;
+
 import org.nutz.dao.Dao;
 import org.nutz.dao.entity.annotation.Table;
 import org.nutz.log.Log;
@@ -15,14 +17,14 @@ public class NutzSetup implements Setup {
 	@Override
 	public void init(NutConfig config) {
 		Log.debug("config ioc=" + config.getIoc());
-		
 		Dao dao = config.getIoc().get(Dao.class);
-		for (Class<?> klass : Scans.me().scanPackage("com.alm.nutz")) {
-			if(klass.getAnnotation(Table.class) != null){
-				dao.create(klass, false);
+		List<Class<?>> cls = Scans.me().scanPackage("com.alm.nutz.bean");
+		for(Class<?> bean : cls){
+			Table table = (Table) bean.getAnnotation(Table.class);
+			if(table!=null){
+				dao.create(bean, false);
 			}
 		}
-		
 	}
 
 	@Override

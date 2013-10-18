@@ -5,14 +5,24 @@ var ioc = {
 			depose :"close"
 		},
 		fields : {
-			driverClassName : 'org.h2.Driver',
-			url             : 'jdbc:h2:my_nutz_dwz'
+			driverClassName : 'com.mysql.jdbc.Driver',
+			url : 'jdbc:mysql://localhost:3306/almdb?useUnicode=true&characterEncoding=UTF-8',
+			username : 'root',
+			password : 'root',
+			initialSize : 10,
+			maxActive : 100,
+			minIdle : 10,
+			maxIdle : 20,
+			defaultAutoCommit : false,
+			validationQuery : "select 1"
 		}
 	},
     dao : {
-        type : "org.nutz.dao.impl.NutDao",
-        fields : {
-        	args : [{refer : 'dataSource'}]
-        }
+		type : "org.nutz.dao.impl.NutDao",
+		fields : {
+			dataSource : {
+				refer : 'dataSource'
+			}
+		}
     }
 };
