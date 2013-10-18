@@ -9,8 +9,19 @@ public class User {
 	@Id
 	private long id;
 	
+	/**
+	 * 姓名
+	 */
 	private String name;
 	
+	/**
+	 * 用户名
+	 */
+	private String username;
+	
+	/**
+	 * 密码
+	 */
 	private String password;
 
 	/**   
@@ -30,34 +41,51 @@ public class User {
 	}
 
 	/**   
-	 * 获取name   
-	 * @return name name   
+	 * 获取姓名   
+	 * @return name 姓名   
 	 */
 	public String getName() {
 		return name;
 	}
 
 	/**   
-	 * 设置name   
-	 * @param name name   
+	 * 设置姓名   
+	 * @param name 姓名   
 	 */
 	public void setName(String name) {
 		this.name = name;
 	}
 
 	/**   
-	 * 获取password   
-	 * @return password password   
+	 * 获取用户名   
+	 * @return username 用户名   
+	 */
+	public String getUsername() {
+		return username;
+	}
+
+	/**   
+	 * 设置用户名   
+	 * @param username 用户名   
+	 */
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	/**   
+	 * 获取密码   
+	 * @return password 密码   
 	 */
 	public String getPassword() {
 		return password;
 	}
 
 	/**   
-	 * 设置password   
-	 * @param password password   
+	 * 设置密码   
+	 * @param password 密码   
 	 */
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	
 }
